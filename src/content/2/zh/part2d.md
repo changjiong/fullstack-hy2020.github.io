@@ -335,12 +335,15 @@ const create = newObject => {
 const update = (id, newObject) => {
   return axios.put(`${baseUrl}/${id}`, newObject)
 }
-
-export default { 
+      
+const noteService =  { 
   getAll: getAll, 
   create: create, 
   update: update 
 }
+      
+export default noteService // otherwise it warns "Assign object to a variable before exporting as module default  import/no-anonymous-default-export"
+
 ```
 
 <!-- The module returns an object that has three functions (<i>getAll</i>, <i>create</i>, and <i>update</i>) as its properties that deal with notes. The functions directly return the promises returned by the axios methods. -->
