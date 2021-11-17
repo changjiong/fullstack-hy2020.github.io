@@ -349,7 +349,7 @@ beforeEach(async () => {
 
   noteObject = new Note(initialNotes[1])
   await noteObject.save()
-})
+},100000)
 // highlight-end
 // ...
 ```
